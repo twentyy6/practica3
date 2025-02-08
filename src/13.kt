@@ -1,14 +1,13 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
-
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+    val number = readln().toInt()
+    val digits = number.toString().map { it.toString().toInt() }
+    val sumFirstTwo = digits[0] + digits[1]
+    val sumLastTwo = digits[2] + digits[3]
+    val sumAll = digits.sum()
+    val productAll = digits.reduce { acc, i -> acc * i }
+    println("Сумма первых двух цифр равна сумме последних двух: ${sumFirstTwo == sumLastTwo}")
+    println("Сумма цифр кратна трем: ${sumAll % 3 == 0}")
+    println("Произведение цифр кратно четырем: ${productAll % 4 == 0}")
+    val a = readln().toInt()
+    println("Произведение цифр кратно $a: ${productAll % a == 0}")
 }
